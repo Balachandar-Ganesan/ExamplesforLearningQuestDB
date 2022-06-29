@@ -1,0 +1,19 @@
+CREATE TABLE BitCoinPrice(
+name symbol,  
+value float,
+Priceat timestamp
+)
+timestamp(Priceat)
+
+select count(*) from 'BitCoinPrice'
+
+insert into 'BitCoinPrice' (name,value,priceat) values(
+  'BTC-USD',
+  20122.53,
+  to_timestamp('2022-06-29T00:00:00', 'yyyy-MM-ddTHH:mm:ss'))
+
+  select * from 'BitCoinPrice'
+
+TRUNCATE TABLE  'BitCoinPrice'
+
+
