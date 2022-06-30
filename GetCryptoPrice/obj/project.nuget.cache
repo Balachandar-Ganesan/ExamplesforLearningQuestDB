@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "MdMtuWQnacx59DNs80F/tot2Ukg925FHgr05o9LJjBUmzOS3hM3gyEtXPeSIngqbnRiehriUCJbSlZsH6+SKng==",
+  "success": true,
+  "projectFilePath": "C:\\Data\\Downloads\\questdb\\Crypto\\GetCryptoPrice\\GetCryptoPrice.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\admin\\.nuget\\packages\\bouncycastle.netcore\\1.9.0\\bouncycastle.netcore.1.9.0.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\net-questdb-client\\1.1.0\\net-questdb-client.1.1.0.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
