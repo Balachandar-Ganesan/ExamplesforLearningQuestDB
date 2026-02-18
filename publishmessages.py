@@ -4,11 +4,11 @@ import json
 import time
 
 from google.cloud import pubsub_v1
-API_KEY = ""
+API_KEY = "TG4P32WYA41OZJR8"
 STOCKS = ['AAPL','MSFT','NVDA','AMZN','GOOGL']
 API_URL = "https://www.alphavantage.co/query"
-PROJECT_ID = ""
-TOPIC_ID = ""
+PROJECT_ID = "fifth-battery-341710"
+TOPIC_ID = "stock-data-topic"
 
 publisher = pubsub_v1.PublisherClient()
 topic_path = publisher.topic_path(PROJECT_ID, TOPIC_ID)
@@ -22,23 +22,23 @@ def publish_to_pubsub(data):
 @functions_framework.http
 def hello_http(request):
     auth.authenticate_user(project_id=PROJECT_ID)
-for stock in STOCKS:
-  time.sleep(3)
-  params = {
+    for stock in STOCKS:
+    time.sleep(3)
+    params = {
     "function": "GLOBAL_QUOTE",
     "symbol": stock,
     "apikey": API_KEY
-  }
+     }
 
-
-  response = requests.get(API_URL, params=params)
-  if response.status_code == 200:
-    data = response.json()
-    print(f"--- Live Global Quote for {stock} ---")
-    print(json.dumps(data, indent=4))
-    publish_to_pubsub({
+     print("Publishing mesages from Cloud Functions")
+     response = requests.get(API_URL, params=params)
+     if response.status_code == 200:
+       data = response.json()
+       print(f"--- Live Global Quote for {stock} ---")
+       print(json.dumps(data, indent=4))
+       publish_to_pubsub({
             "symbol": stock,
             "data": data
         })
-  else:
-    print(f"Request failed with status code: {response.status_code}")
+     else:
+       print(f"Request failed with status code: {response.status_code}")
