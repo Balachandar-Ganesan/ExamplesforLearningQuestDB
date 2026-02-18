@@ -4,11 +4,11 @@ import json
 import time
 
 from google.cloud import pubsub_v1
-API_KEY = "TG4P32WYA41OZJR8"
+API_KEY = ""
 STOCKS = ['AAPL','MSFT','NVDA','AMZN','GOOGL']
 API_URL = "https://www.alphavantage.co/query"
-PROJECT_ID = "fifth-battery-341710"
-TOPIC_ID = "stock-data-topic"
+PROJECT_ID = ""
+TOPIC_ID = ""
 
 publisher = pubsub_v1.PublisherClient()
 topic_path = publisher.topic_path(PROJECT_ID, TOPIC_ID)
